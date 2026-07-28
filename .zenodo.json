@@ -1,0 +1,22 @@
+{
+  "title": "Smooth Surrogate Models Approve Impossible Firing Patterns: A Hidden Flaw in Writing Brain Codes (code and data)",
+  "upload_type": "software",
+  "creators": [
+    { "name": "Zhong, Peilin" }
+  ],
+  "license": "MIT",
+  "keywords": [
+    "neurostimulation",
+    "Hodgkin-Huxley model",
+    "surrogate model",
+    "model-based control",
+    "firing rate",
+    "depolarization block",
+    "Type-II excitability",
+    "computational neuroscience"
+  ],
+  "description": "Code, figures, and data for the preprint. A smooth differentiable surrogate of a Hodgkin-Huxley neuron's firing-rate (f-I) curve silently certifies target firing rates the real neuron cannot produce (the Type-II onset gap and depolarization block); the failure is invariant to fit quality, and a feasibility screen against the true f-I removes it.",
+  "related_identifiers": [
+    { "relation": "isSupplementTo", "identifier": "10.5281/zenodo.21645655", "scheme": "doi" }
+  ]
+}

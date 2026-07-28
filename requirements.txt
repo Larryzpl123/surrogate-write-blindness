@@ -1,0 +1,9 @@
+# Exact versions used to generate the archived figures/results (macOS, Apple Silicon).
+# Core scripts (fit_matches, run_*, make_figures, audit) need numpy/scipy/matplotlib only;
+# re-measuring the HH f-I (measure_hh_fi.py) additionally needs jax + jaxlib + jaxley.
+numpy==2.5.1
+scipy==1.18.0
+matplotlib==3.11.0
+jax==0.11.0
+jaxlib==0.11.0
+jaxley==0.13.0
