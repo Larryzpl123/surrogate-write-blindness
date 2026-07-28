@@ -9,6 +9,10 @@ authors:
     given-names: Peilin
 license: MIT
 repository-code: "https://github.com/Larryzpl123/surrogate-write-blindness"
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.21649643
+    description: "Concept DOI for the code archive (resolves to the latest version)"
 preferred-citation:
   type: article
   title: "Smooth Surrogate Models Approve Impossible Firing Patterns: A Hidden Flaw in Writing Brain Codes"
