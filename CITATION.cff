@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use this code, please cite it; see references for the associated preprint."
+message: "If you use this code, please cite the associated preprint (the preferred-citation below). The code's own archive DOI is in identifiers."
 title: "Code, figures, and data for the preprint \"Smooth Surrogate Models Approve Impossible Firing Patterns: A Hidden Flaw in Writing Brain Codes\""
 type: software
 version: 1.0.0
@@ -9,11 +9,11 @@ authors:
     given-names: Peilin
 license: MIT
 repository-code: "https://github.com/Larryzpl123/surrogate-write-blindness"
-references:
-  - type: article
-    title: "Smooth Surrogate Models Approve Impossible Firing Patterns: A Hidden Flaw in Writing Brain Codes"
-    authors:
-      - family-names: Zhong
-        given-names: Peilin
-    year: 2026
-    doi: 10.5281/zenodo.21645655
+preferred-citation:
+  type: article
+  title: "Smooth Surrogate Models Approve Impossible Firing Patterns: A Hidden Flaw in Writing Brain Codes"
+  authors:
+    - family-names: Zhong
+      given-names: Peilin
+  year: 2026
+  doi: 10.5281/zenodo.21645655
