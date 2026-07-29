@@ -18,9 +18,12 @@
     "Type-I excitability",
     "Type-II excitability",
     "bifurcation",
+    "Morris-Lecar model",
+    "SNIC bifurcation",
+    "Andronov-Hopf bifurcation",
     "computational neuroscience"
   ],
-  "description": "Code, figures, and data for the preprint. A smooth differentiable surrogate of a neuron's firing-rate (f-I) curve silently certifies target firing rates the real neuron cannot produce, while reporting zero optimization error. Version 1.1.0 adds the excitability-class result: the failure is a signature of the target cell's onset bifurcation class, present in Type-II models (Hodgkin-Huxley, and Connor-Stevens in its Type-II configuration) and absent in Type-I models (Connor-Stevens Type-I and the Wang-Buzsaki hippocampal interneuron), and it is robust to sodium/potassium conductance variation. The failure is invariant to surrogate fit quality, and a feasibility screen against the true f-I removes it.",
+  "description": "Code, figures, and data for the preprint. A smooth differentiable surrogate of a neuron's firing-rate (f-I) curve silently certifies target firing rates the real neuron cannot produce, while reporting zero optimization error. The failure is a signature of the target cell's onset bifurcation class, present in Type-II models (Hodgkin-Huxley, and Connor-Stevens in its Type-II configuration) and absent in Type-I models (Connor-Stevens Type-I and the Wang-Buzsaki hippocampal interneuron), and it is robust to sodium/potassium conductance variation. Version 1.2.0 adds the minimal-model demonstration: in the two-variable Morris-Lecar model a single parameter switch between SNIC and Andronov-Hopf onset creates or removes the low-rate gap, showing that the gap is a property of the onset bifurcation rather than of channel complexity. The failure is invariant to surrogate fit quality, and a feasibility screen against the true f-I removes it.",
   "related_identifiers": [
     { "relation": "isSupplementTo", "identifier": "10.5281/zenodo.21645655", "scheme": "doi" }
   ]

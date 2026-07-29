@@ -48,6 +48,16 @@ Pure `numpy`/`scipy`/`matplotlib` (no `jaxley` needed):
 `measure_cs_fi.py` (Connor-Stevens Type-I/II) and `measure_real_cells.py` (classic HH, Wang-Buzsaki)
 hold the model kinetics, transcribed from their cited primary sources.
 
+### Minimal-model supplement (figure S1, v1.2.0)
+The two-variable Morris-Lecar model, switched between SNIC (Type-I) and Andronov-Hopf (Type-II)
+onset by a single parameter change, shows that the low-rate gap is a property of the onset
+bifurcation rather than of channel complexity (Hopf floor ~10 Hz; SNIC continuous to ~1.2 Hz):
+
+    cd code
+    python measure_ml_fi.py II          # Hopf regime  -> ../results/fi_MLII.npy
+    python measure_ml_fi.py I           # SNIC regime  -> ../results/fi_MLI.npy
+    python make_ml_supp_figure.py       # figure S1 -> ../figures/figS1_morris_lecar.{png,pdf}
+
 ## Layout
     code/       analysis + figure code (plants, testbed, run_*, make_figures, fit_matches, measure_hh_fi;
                 measure_cs_fi, measure_real_cells, gen_canonical_fi, make_excitability_figure,
