@@ -1,3 +1,7 @@
 __pycache__/
 *.pyc
 .DS_Store
+
+code/cellfi_*.npy
+code/cs_fi_*.npy
+code/cs_fi_results.txt
