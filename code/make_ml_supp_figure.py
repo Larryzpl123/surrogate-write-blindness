@@ -32,15 +32,24 @@ for (letter, title, cls, key, color), ax in zip(PAN, axes):
     floor = floor_of(arr)
     top = float(max(r)) * 1.15
     sil = r == 0
-    ax.plot(I[sil], r[sil], "-", color=GREY, lw=1.6, zorder=2)
     fir = r > 0
+    # Draw the silent branch up to the rheobase, and for the Type-I (SNIC) case continue it to the
+    # first firing point so the onset reads as CONTINUOUS, which is what the data say. Plotting the
+    # two branches as separate polylines leaves a visual gap of one grid step, which would falsely
+    # suggest a discontinuity in the very panel whose point is that there is none.
+    Isil, rsil = I[sil], r[sil]
+    if cls == "Type-I" and Isil.size and I[fir].size:
+        # join all the way TO the first firing point (both x and y), so the two branches meet
+        Isil = np.r_[Isil, I[fir][0]]
+        rsil = np.r_[rsil, r[fir][0]]
+    ax.plot(Isil, rsil, "-", color=GREY, lw=1.6, zorder=2)
     ax.plot(I[fir], r[fir], "-o", color=color, ms=3.6, lw=1.5, zorder=4)
     if cls == "Type-II":
         rheo = float(I[fir][0])
         ax.axhspan(0, floor, color=VERM, alpha=0.13, zorder=0)
         ax.plot([rheo, rheo], [0, floor], ":", color=color, lw=1.3, zorder=3)
         ax.axhline(floor, color=color, lw=0.7, ls="--", zorder=1)
-        note = f"unwritable gap\n(0, {floor:.0f} Hz)"
+        note = f"unwritable gap\n(0, {floor:.2f} Hz)"
     else:
         note = f"no gap:\nfires down to {floor:.1f} Hz"
     ax.text(0.05 * max(I), top * 0.93, note, ha="left", va="top", fontsize=7.5, color=color)

@@ -43,9 +43,16 @@ for (letter, title, cls, key, xmax), ax in zip(PAN, axes.flat):
     color = VERM if cls == "Type-II" else BLUE
     # silent branch (rate 0 below rheobase) as a flat grey line
     sil = m & (r == 0)
-    ax.plot(I[sil], r[sil], "-", color=GREY, lw=1.6, zorder=2)
-    # firing branch
     fir = m & (r > 0)
+    # For Type-I cells, carry the silent branch to the first firing current so the onset reads as
+    # CONTINUOUS (which is what the data say). Two separate polylines would leave a one-grid-step
+    # visual gap in exactly the panels whose point is that no gap exists.
+    Isil, rsil = I[sil], r[sil]
+    if cls == "Type-I" and Isil.size and I[fir].size:
+        # join all the way TO the first firing point (both x and y), so the two branches meet
+        Isil = np.r_[Isil, I[fir][0]]
+        rsil = np.r_[rsil, r[fir][0]]
+    ax.plot(Isil, rsil, "-", color=GREY, lw=1.6, zorder=2)
     ax.plot(I[fir], r[fir], "-o", color=color, ms=3.6, lw=1.5, zorder=4)
     if cls == "Type-II":
         # the unwritable low-rate gap: no current yields a rate in (0, floor)

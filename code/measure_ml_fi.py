@@ -58,10 +58,13 @@ if __name__ == "__main__":
     typ = sys.argv[1] if len(sys.argv) > 1 else "II"
     if len(sys.argv) >= 5:
         grid = np.round(np.arange(float(sys.argv[2]), float(sys.argv[3]), float(sys.argv[4])), 3)
-    elif typ == "I":     # lean coarse + fine onset (SNIC rheobase ~36-40)
-        grid = np.unique(np.r_[0, 10, 20, 28, np.arange(34, 50, 2.0), 60, 80, 100.0])
-    else:                # lean coarse + fine onset (Hopf onset ~84-90)
-        grid = np.unique(np.r_[0, 20, 40, 60, 75, np.arange(80, 94, 2.0), 105, 120, 140.0])
+    elif typ == "I":     # coarse + FINE onset at 0.5 (SNIC rheobase ~38-40; resolve it so the
+                         # continuous onset is visible rather than straddling a coarse grid step)
+        grid = np.unique(np.r_[0, 10, 20, 28, 34, 36, np.arange(37.5, 42.5, 0.5),
+                              44, 46, 48, 60, 80, 100.0])
+    else:                # coarse + fine onset (Hopf onset ~88-90)
+        grid = np.unique(np.r_[0, 20, 40, 60, 75, 80, 84, 86, np.arange(87.5, 91.0, 0.5),
+                              92, 105, 120, 140.0])
     m = ML(typ)
     rates = []
     for I in grid:
