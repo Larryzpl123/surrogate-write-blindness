@@ -2,8 +2,8 @@ cff-version: 1.2.0
 message: "If you use this code, please cite the associated preprint (the preferred-citation below). The code's own archive DOI is in identifiers."
 title: "Code, figures, and data for the preprint \"Smooth Surrogate Models Approve Impossible Firing Patterns: A Hidden Flaw in Writing Brain Codes\""
 type: software
-version: 1.2.0
-date-released: 2026-07-29
+version: 1.3.0
+date-released: 2026-07-30
 authors:
   - family-names: Zhong
     given-names: Peilin
